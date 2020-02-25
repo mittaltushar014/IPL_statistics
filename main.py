@@ -1,4 +1,5 @@
 from matches_played_per_year import compute_and_plot_matches_played_per_year
+from extra_runs_2016 import compute_and_plot_extra_runs_2016
 
 import csv
 
@@ -16,6 +17,7 @@ def extract_deliveries():
 
 def main():
     compute_and_plot_matches_played_per_year(extract_matches())
+    compute_and_plot_extra_runs_2016(extract_matches(),extract_deliveries())
     
 if __name__ == "__main__":
     main()
