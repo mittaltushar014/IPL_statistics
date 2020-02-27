@@ -2,27 +2,23 @@ import matplotlib.pyplot as plt
 
 
 def extra_runs_per_team(matches, deliveries):
-    """
-    To calculate extra runs per team
-    """
+    """To calculate extra runs per team """
 
     runs_dict = dict()
-    match_id = [int(row['id']) for row in matches if row['season'] == '2016']
+    match_id = [int(match['id']) for match in matches if match['season'] == '2016']
 
-    for row in deliveries:
-        if int(row['match_id']) in match_id:
-            if row['batting_team'] in runs_dict:
-                runs_dict[row['batting_team']] += int(row['extra_runs'])
+    for delivery in deliveries:
+        if int(delivery['match_id']) in match_id and delivery['is_super_over'] == '0':
+            if delivery['bowling_team'] in runs_dict:
+                runs_dict[delivery['bowling_team']] += int(delivery['extra_runs'])
             else:
-                runs_dict[row['batting_team']] = int(row['extra_runs'])
+                runs_dict[delivery['bowling_team']] = int(delivery['extra_runs'])
 
     print(runs_dict)
     return runs_dict
 
 def plot_extra_runs_per_team(extra_runs_with_team):
-    '''
-    To plot extra runs per team
-    '''
+    '''To plot extra runs per team '''
 
     plt.bar(extra_runs_with_team.keys(), extra_runs_with_team.values())
     plt.xlabel("Team")
@@ -32,9 +28,7 @@ def plot_extra_runs_per_team(extra_runs_with_team):
     plt.show()
 
 def compute_and_plot_extra_runs_2016(matches, deliveries):
-    '''
-    To compute and plot extra runs for 2016
-    '''
+    '''To compute and plot extra runs for 2016 '''
 
     extra_runs_with_team = extra_runs_per_team(matches, deliveries)
     plot_extra_runs_per_team(extra_runs_with_team)
