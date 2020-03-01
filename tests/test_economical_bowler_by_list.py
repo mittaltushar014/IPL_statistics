@@ -4,7 +4,6 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
-#sys.path.append(os.getcwd() + '/..')
 
 from economical_bowlers_by_list import economical_bowler_with_economy
 

@@ -4,7 +4,6 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
-#sys.path.append(os.getcwd() + '/..')
 
 from extra_runs_2016 import extra_runs_per_team
 

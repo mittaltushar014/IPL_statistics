@@ -4,7 +4,6 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
-#sys.path.append(os.getcwd() + '/..')
 
 from matches_played_per_year import matches_played_per_year_func
 

@@ -4,7 +4,6 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
-#sys.path.append(os.getcwd() + '/..')
 
 from total_match_in_percent_story import team_and_winning_matches_played_func
 

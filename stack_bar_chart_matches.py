@@ -30,6 +30,7 @@ def team_with_matches_and_year(matches):
     print(season_having_list_wins)
     return season_having_list_wins, teams, seasons
 
+
 def plot_team_with_matches_and_year(season_having_list_wins, teams, seasons):
     '''To plot the stacked bar chart '''
 

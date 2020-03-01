@@ -45,7 +45,7 @@ def bowler_econony():
     
     query = "SELECT DISTINCT bowler, (SUM(total_runs-(bye_runs+legbye_runs))/(count(over)/6.0)) AS Economy \
             FROM iplschema.deliveries WHERE match_id IN (SELECT id FROM iplschema.matches WHERE season=2015) \
-            AND is_super_over=0  GROUP BY bowler ORDER BY Economy LIMIT 10;"
+            AND is_super_over=0 GROUP BY bowler ORDER BY Economy LIMIT 10;"
     query_output = fetch_query_data(query)
     return query_output    
 
@@ -57,9 +57,13 @@ def total_matches_won():
 
 
 print(matches_played_per_year())
+print("\n")
 print(year_with_team_and_matches())
+print("\n")
 print(extra_runs_2016())
+print("\n")
 print(bowler_econony())
+print("\n")
 print(total_matches_won())
 
 

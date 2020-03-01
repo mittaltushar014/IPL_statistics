@@ -4,7 +4,6 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
-#sys.path.append(os.getcwd() + '/..')
 
 from stack_bar_chart_matches import team_with_matches_and_year
 

@@ -4,7 +4,7 @@ from collections import OrderedDict
 def economical_bowler_with_economy(matches, deliveries):
     """To calculate economy of bowlers """
 
-    bowler_dict = dict()
+    bowler_dict = OrderedDict()
     match_id = [int(match['id']) for match in matches if match['season'] == '2015']
 
 
@@ -20,7 +20,7 @@ def economical_bowler_with_economy(matches, deliveries):
             else:
                 bowler_dict[delivery['bowler']] = [runs, 1]
 
-    bowler_final_dict = dict()
+    bowler_final_dict = OrderedDict()
     final_economy = 0.1
 
     for bowler, runs_and_balls in bowler_dict.items():
@@ -32,42 +32,13 @@ def economical_bowler_with_economy(matches, deliveries):
 
 
 def plot_economical_bowler_and_economy(economical_bowler_and_economy):
-    """To plot economy of bowler """
-
-    #bowler = list()
-    #economy = list()
-    #loop_stop_var = 1
-
-    ''' 
-    for bowler_man, bowler_eco in sorted(economical_bowler_and_economy.items(), key=lambda item: item[1]):
-        bowler.append(bowler_man)
-        economy.append(bowler_eco)
-        loop_stop_var += 1
-        if loop_stop_var > 10:
-            break
-    '''
-    
-    #bowler, economy = [(bowler_man, bowler_eco) for bowler_man, bowler_eco in sorted(economical_bowler_and_economy.items(), key=lambda item: item[1])]
-
-    #print(bowler)
-    #print(economy)
-    
-    #plt.bar(bowler, economy)
-
     
     economical_bowler_ordered_dict=OrderedDict()
 
     for item in sorted(economical_bowler_and_economy.items(), key= lambda item : item[1]):
         economical_bowler_ordered_dict[item[0]]=item[1]
       
-    #bowler_list=economical_bowler_and_economy.keys()[0:10]
-    #eco_list=economical_bowler_and_economy.values()[0:10]
 
-    #bowler_list=economical_bowler_ordered_dict.keys()[0:10]
-    #eco_list=economical_bowler_ordered_dict.values()[0:10]
-    
-    #plt.bar(economical_bowler_ordered_dict.keys()[0:10], economical_bowler_ordered_dict.values()[0:10])
-    
     plt.bar(economical_bowler_ordered_dict.keys()[0:10], economical_bowler_ordered_dict.values()[0:10])
     plt.xlabel("Bowler")
     plt.ylabel("Economy")
@@ -81,3 +52,4 @@ def compute_and_plot_economical_bowlers_by_list(matches, deliveries):
 
     economical_bowler_and_economy = economical_bowler_with_economy(matches, deliveries)
     plot_economical_bowler_and_economy(economical_bowler_and_economy)
+
