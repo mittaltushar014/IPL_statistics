@@ -15,10 +15,14 @@ def economical_bowler_with_economy(matches, deliveries):
 
             if delivery['bowler'] in bowler_dict.keys():
                 bowler_dict[delivery['bowler']][0] += runs
-                bowler_dict[delivery['bowler']][1] += 1
+                if delivery['wide_runs'] == '0' and delivery['noball_runs'] == '0':
+                    bowler_dict[delivery['bowler']][1] += 1
 
             else:
-                bowler_dict[delivery['bowler']] = [runs, 1]
+                bowler_dict[delivery['bowler']] = [runs, 0]
+                if delivery['wide_runs'] == '0' and delivery['noball_runs'] == '0':
+                    bowler_dict[delivery['bowler']][1] = 1
+
 
     bowler_final_dict = OrderedDict()
     final_economy = 0.1

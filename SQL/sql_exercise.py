@@ -43,7 +43,7 @@ def extra_runs_2016():
 
 def bowler_econony():
     
-    query = "SELECT DISTINCT bowler, (SUM(total_runs-(bye_runs+legbye_runs))/(count(over)/6.0)) AS Economy \
+    query = "SELECT DISTINCT bowler, ((SUM(total_runs-(bye_runs+legbye_runs))*6.0)/(count(CASE WHEN (noball_runs=0 AND wide_runs=0) THEN 1 ELSE NULL END))) AS Economy \
             FROM iplschema.deliveries WHERE match_id IN (SELECT id FROM iplschema.matches WHERE season=2015) \
             AND is_super_over=0 GROUP BY bowler ORDER BY Economy LIMIT 10;"
     query_output = fetch_query_data(query)
@@ -69,51 +69,3 @@ print(total_matches_won())
 
 connection.close()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-import psycopg2 as pg2
-conn = pg2.connect(database="IPL_DATASET", user="postgres", password="kms@1234", host="127.0.0.1", port="5432")
-print(conn.get_dsn_parameters(), "\n")
-def get_data_from_query(query):
-    """return query output"""
-    cur = conn.cursor()
-    cur.execute(query)
-    data_from_query = cur.fetchall()
-    return data_from_query
-def matches_per_year():
-    query = """select distinct season ,count(season) from matches group by season;"""
-    count = get_data_from_query(query)
-    return count
-print(matches_per_year())            
-'''
