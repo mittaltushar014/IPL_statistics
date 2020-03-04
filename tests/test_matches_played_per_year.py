@@ -3,8 +3,8 @@ import sys
 import os
 import csv
 
-sys.path.insert(2,os.path.join(os.getcwd(),'..'))
-sys.path.insert(3,os.path.join(os.getcwd(),'../SQL/'))
+sys.path.insert(2,os.path.join(os.getcwd(),'../ipl_analytics/csv/'))
+sys.path.insert(3,os.path.join(os.getcwd(),'../ipl_analytics/postgres/'))
 
 from matches_played_per_year import matches_played_per_year_func
 from sql_exercise import *
@@ -12,8 +12,9 @@ from sql_exercise import *
 def extract_matches():
     '''For extracting matches'''
 
-    data_file = open('mock_matches.csv', 'r')
+    data_file = open('../data/mock_matches.csv', 'r')
     match_file = csv.DictReader(data_file)
+    
     return match_file
 
 
