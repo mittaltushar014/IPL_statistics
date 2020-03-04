@@ -28,5 +28,5 @@ def plot_matches_played_per_year(matches_per_year):
 def compute_and_plot_matches_played_per_year(matches):
     """To compute and plot matches played per year """
 
-    matches_per_year = matches_played_per_year_func(matches)
+    matches_per_year = matches_played_per_year_func( matches )
     plot_matches_played_per_year(matches_per_year)
