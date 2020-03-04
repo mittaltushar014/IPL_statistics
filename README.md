@@ -1,6 +1,7 @@
-﻿Project for transforming raw data from IPL into graphs that will convey some meaning / analysis. 
+﻿
+#### Python 2.7.17
 
-
+Project for transforming raw data from IPL into graphs that will convey some meaning / analysis.
 
 #### Part 1 - Python:
 
@@ -16,3 +17,13 @@ Different python functions to do the following tasks.
 #### Part 2 - Unit Testing:
 
 Creating our own smaller dataset - like 5 matches and 15 deliveries. Manually setting the result for the unit tests. 
+
+
+#### Part 3- SQL:
+
+Importing our test source into a Postgresql database i.e. ipl_test_db. Writing SQL queries for each of the above questions. Saving it into a text file. Using the psql prompt or pgadmin to write queries.
+
+Now, connecting to the database from Python using the psycopg2 library
+Defining separate functions which execute each query.
+These functions must return the same data as your Python business logic functions, so that the corresponding plot functions can be shared between them.
+Comparing the SQL output with your original Python functions' output.

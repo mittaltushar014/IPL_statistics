@@ -24,7 +24,7 @@ SELECT DISTINCT bowler, (SUM(total_runs-(bye_runs+legbye_runs))/(count(over)/6.0
 
 5- Discuss a "Story" you want to tell with the given data. As with part 1, prepare the data structure and plot with matplotlib.
 Command:
-SELECT winner,COUNT(winner) AS Matches_Won FROM iplschema.matches GROUP BY winner;
+SELECT winner,COUNT(winner) AS Matches_Won FROM iplschema.matches where winner IS NOT NULL GROUP BY winner;
 
 
 

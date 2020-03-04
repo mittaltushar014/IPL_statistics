@@ -7,10 +7,11 @@ def team_and_winning_matches_played_func(matches):
     team_matches_dict = dict()
 
     for match in matches:
-        if match['winner'] in team_matches_dict:
-            team_matches_dict[match['winner']] += 1
-        else:
-            team_matches_dict[match['winner']] = 1
+        if match['winner']!="":
+            if match['winner'] in team_matches_dict:
+                team_matches_dict[match['winner']] += 1
+            else:
+                team_matches_dict[match['winner']] = 1
 
     print(team_matches_dict)
     return team_matches_dict

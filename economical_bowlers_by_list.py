@@ -4,7 +4,7 @@ from collections import OrderedDict
 def economical_bowler_with_economy(matches, deliveries):
     """To calculate economy of bowlers """
 
-    bowler_dict = OrderedDict()
+    bowler_dict = dict()
     match_id = [int(match['id']) for match in matches if match['season'] == '2015']
 
 
@@ -24,7 +24,7 @@ def economical_bowler_with_economy(matches, deliveries):
                     bowler_dict[delivery['bowler']][1] = 1
 
 
-    bowler_final_dict = OrderedDict()
+    bowler_final_dict = dict()
     final_economy = 0.1
 
     for bowler, runs_and_balls in bowler_dict.items():

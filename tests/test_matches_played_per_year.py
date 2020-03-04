@@ -4,8 +4,10 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
+sys.path.insert(3,os.path.join(os.getcwd(),'../SQL/'))
 
 from matches_played_per_year import matches_played_per_year_func
+from sql_exercise import *
 
 def extract_matches():
     '''For extracting matches'''
@@ -22,7 +24,9 @@ class TestIPL(unittest.TestCase):
         '''Testing matches played per year '''
 
         test_dict = {'2009': 1, '2010': 1, '2015': 2, '2017': 1, '2016': 2, '2011': 2, '2008': 1}
+        
         self.assertEqual(matches_played_per_year_func(extract_matches()), test_dict)
+        self.assertEqual({str(year):num for year, num in matches_played_per_year_sql(False)},test_dict)
 
 
 if __name__ == '__main__':

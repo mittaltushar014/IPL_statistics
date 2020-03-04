@@ -4,8 +4,10 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
+sys.path.insert(3,os.path.join(os.getcwd(),'../SQL/'))
 
 from total_match_in_percent_story import team_and_winning_matches_played_func
+from sql_exercise import *
 
 def extract_matches():
     '''For extracting matches '''
@@ -25,6 +27,7 @@ class TestIPL(unittest.TestCase):
                      'Rising Pune Supergiant': 1, 'Sunrisers Hyderabad': 1,
                      'Rajasthan Royals': 1, 'Mumbai Indians': 1}
         self.assertEqual(team_and_winning_matches_played_func(extract_matches()), test_dict)
+        self.assertEqual({team:total for team, total in total_matches_won_sql(False)}, test_dict)
 
 
 if __name__ == '__main__':

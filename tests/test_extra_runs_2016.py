@@ -4,8 +4,10 @@ import os
 import csv
 
 sys.path.insert(2,os.path.join(os.getcwd(),'..'))
+sys.path.insert(3,os.path.join(os.getcwd(),'../SQL/'))
 
 from extra_runs_2016 import extra_runs_per_team
+from sql_exercise import *
 
 def extract_matches():
     '''For extracting matches '''
@@ -30,6 +32,7 @@ class TestIPL(unittest.TestCase):
 
         test_dict = {'Kolkata Knight Riders': 1, 'Rising Pune Supergiant': 4}
         self.assertEqual(extra_runs_per_team(extract_matches(), extract_deliveries()), test_dict)
+        self.assertEqual({team:ex_runs for team, ex_runs in extra_runs_2016_sql(False)},test_dict)
 
 
 if __name__ == '__main__':
