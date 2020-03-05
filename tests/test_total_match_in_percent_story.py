@@ -10,7 +10,9 @@ from total_match_in_percent_story import team_and_winning_matches_played_func
 from sql_exercise import *
 
 def extract_matches():
-    '''For extracting matches '''
+    '''For extracting matches
+       Return type : list of dictionary
+    '''
 
     data_file = open('../data/mock_matches.csv', 'r')
     match_file = csv.DictReader(data_file)

@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 
 
 def extra_runs_per_team(matches, deliveries):
-    """To calculate extra runs per team """
+    """To calculate extra runs per team
+       Return type : Dictionary
+    """
 
     runs_dict = dict()
     #match_id = list()

@@ -19,7 +19,9 @@ def extract_matches():
     return match_file
 
 def extract_deliveries():
-    '''To extract deliveries '''
+    '''To extract deliveries 
+       Return type : list of dictionary
+    '''
 
     data_file = open('data/deliveries.csv', 'r')
     deliveries_file = csv.DictReader(data_file)
@@ -27,7 +29,8 @@ def extract_deliveries():
 
 
 def main():
-    '''To compute and plot different exercises '''
+    '''To compute and plot different exercises 
+       Return type: list of dictionary'''
 
     compute_and_plot_matches_played_per_year(extract_matches())
     compute_and_plot_stack_bar_chart_matches(extract_matches())

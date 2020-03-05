@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 
 
 def team_and_winning_matches_played_func(matches):
-    '''For percent of matches played by team '''
+    '''For percent of matches played by team
+       Return type: Dictionary
+    '''
 
     team_matches_dict = dict()
 

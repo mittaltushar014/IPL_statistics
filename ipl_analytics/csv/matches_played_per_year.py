@@ -1,7 +1,9 @@
 import matplotlib.pyplot as plt
 
 def matches_played_per_year_func(matches):
-    """To return the data of matches played per year """
+    """To return the data of matches played per year 
+       Return type: Dictionary
+    """
 
     matches_dict = dict()
 

@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 from collections import OrderedDict
 
 def economical_bowler_with_economy(matches, deliveries):
-    """To calculate economy of bowlers """
+    """To calculate economy of bowlers 
+       Return type: Dictionary
+    """
 
     bowler_dict = dict()
     match_id = [int(match['id']) for match in matches if match['season'] == '2015']

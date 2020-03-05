@@ -10,14 +10,18 @@ from extra_runs_2016 import extra_runs_per_team
 from sql_exercise import *
 
 def extract_matches():
-    '''For extracting matches '''
+    '''For extracting matches 
+       Return type : list of dictionary
+    '''
 
     data_file = open('../data/mock_matches.csv', 'r')
     match_file = csv.DictReader(data_file)
     return match_file
 
 def extract_deliveries():
-    '''For extracting deliveries '''
+    '''For extracting deliveries
+       Return type : list of dictionary
+    '''
 
     data_file = open('../data/mock_deliveries.csv', 'r')
     deliveries_file = csv.DictReader(data_file)

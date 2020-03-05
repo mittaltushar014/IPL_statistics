@@ -10,7 +10,9 @@ from stack_bar_chart_matches import team_with_matches_and_year
 from sql_exercise import *
 
 def extract_matches():
-    '''For extracting matches '''
+    '''For extracting matches 
+       Return type : list of dictionary
+    '''
 
     data_file = open('../data/mock_matches.csv', 'r')
     match_file = csv.DictReader(data_file)

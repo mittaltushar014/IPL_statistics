@@ -2,7 +2,9 @@ from collections import Counter
 from matplotlib import pyplot as plt
 
 def team_with_matches_and_year(matches):
-    '''To have team with count of matches along with year  '''
+    '''To have team with count of matches along with year  
+       Return type: Dictionary with list as values
+    '''
 
     season_winner_tuple_list = []
     teams = set()
