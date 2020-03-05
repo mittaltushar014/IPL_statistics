@@ -8,7 +8,7 @@ parser.read("config.ini")
 
 def decrypt_password():
     key = parser.get('database','key')
-    encoded_ciphertext="c2MAAl0+ZypGvob734Exg20mqBMRTr6aVg2acAB+b2vFqVUySTYF4C4zwlswrBWU7C/aDcoQuiEhqGi0dzr+g42Eo7IwZENZIcgRvP0="
+    encoded_ciphertext = parser.get('database','encoded_ciphertext')
     cipher = b64decode(encoded_ciphertext)
     decrypted_password_plaintext = decrypt(key, cipher)
     return decrypted_password_plaintext
@@ -118,8 +118,6 @@ def bowler_economy_sql(data):
    
     return query_list
     
-
-
 
 def total_matches_won_sql(data):
     """ Returning total matches won per team

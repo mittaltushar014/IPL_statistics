@@ -41,19 +41,3 @@ class TestIPL(unittest.TestCase):
 if __name__ == '__main__':
     unittest.main()
 
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-test_sql_output=[('DJ Muthuswami', Decimal('6.0000000000000000')), ('M Morkel', Decimal('6.7500000000000000')), ('UT Yadav', Decimal('7.5000000000000000')),
-                         ('NM Coulter-Nile', Decimal('8.5714285714285714')), ('JA Morkel', Decimal('12.0000000000000000'))]'''

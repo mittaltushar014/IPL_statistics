@@ -33,7 +33,7 @@ class TestIPL(unittest.TestCase):
         test_dict = {'Kolkata Knight Riders': 1, 'Rising Pune Supergiant': 4}
         
         self.assertEqual(extra_runs_per_team(extract_matches(), extract_deliveries()), test_dict)
-        self.assertEqual({team:ex_runs for team, ex_runs in extra_runs_2016_sql(False)},test_dict)
+        self.assertEqual({team:extra_runs for team, extra_runs in extra_runs_2016_sql(False)},test_dict)
 
 
 if __name__ == '__main__':
