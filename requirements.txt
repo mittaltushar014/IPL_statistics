@@ -4,7 +4,7 @@ matplotlib==2.1.1
 pep8==1.7.1
 psycopg2-binary==2.8.4
 pycrypto==2.6.1
-pylint==1.9.5
+pylint==4.0.9
 simple-crypt==4.1.7
 
 
